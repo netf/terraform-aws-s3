@@ -1,6 +1,6 @@
-# dp-terraform-s3
+# terraform-aws-s3
 
-Data Platform terraform module for AWS S3 buckets
+Terraform module for AWS S3 buckets
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
