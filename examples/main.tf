@@ -10,10 +10,10 @@ module "s3_bucket" {
   allow_read  = ["arn:aws:iam::047625233815:user/netf", "arn:aws:iam::047625233815:user/ursuad"]
   allow_write = ["arn:aws:iam::047625233815:user/ursuad"]
 
-//  logging = [{
-//    target_bucket = "dp-datalake-dev-test-bucket-1"
-//    target_prefix = "test"
-//  }]
+  //  logging = [{
+  //    target_bucket = "dp-datalake-dev-test-bucket-1"
+  //    target_prefix = "test"
+  //  }]
 
   sqs_notification = "true"
 
@@ -27,26 +27,26 @@ module "s3_bucket" {
 
   enable_versioning = "true"
 
-//  override_policy = {
-//    Version = "2012-10-17"
-//    Id      = "123"
-//
-//    Statement = [
-//      {
-//        Sid       = "RequireMFA"
-//        Effect    = "Deny"
-//        Principal = "*"
-//        Action    = "s3:*"
-//        Resource  = "arn:aws:s3:::dp-datalake-test-bucket-31337/*"
-//
-//        Condition = {
-//          BoolIfExists = {
-//            "aws:MultiFactorAuthPresent" = "false"
-//          }
-//        }
-//      },
-//    ]
-//  }
+  //  override_policy = {
+  //    Version = "2012-10-17"
+  //    Id      = "123"
+  //
+  //    Statement = [
+  //      {
+  //        Sid       = "RequireMFA"
+  //        Effect    = "Deny"
+  //        Principal = "*"
+  //        Action    = "s3:*"
+  //        Resource  = "arn:aws:s3:::dp-datalake-test-bucket-31337/*"
+  //
+  //        Condition = {
+  //          BoolIfExists = {
+  //            "aws:MultiFactorAuthPresent" = "false"
+  //          }
+  //        }
+  //      },
+  //    ]
+  //  }
 
   bucket_owner_full_control = "false"
 }

@@ -22,7 +22,7 @@ resource "aws_s3_bucket" "bucket_with_encryption" {
   })
 
   dynamic "logging" {
-    for_each = [for l in var.logging: {
+    for_each = [for l in var.logging : {
       target_bucket = l.target_bucket
       target_prefix = l.target_prefix
     }]
@@ -40,7 +40,7 @@ resource "aws_s3_bucket" "bucket_with_encryption" {
 
     transition {
       days          = var.standard_transition_days
-      storage_class = "STANDARD_IA"                     # or "ONEZONE_IA"
+      storage_class = "STANDARD_IA" # or "ONEZONE_IA"
     }
 
     transition {
@@ -48,9 +48,9 @@ resource "aws_s3_bucket" "bucket_with_encryption" {
       storage_class = "GLACIER"
     }
 
-//    expiration {
-//       days = 90
-//    }
+    //    expiration {
+    //       days = 90
+    //    }
 
   }
 
@@ -65,7 +65,7 @@ resource "aws_s3_bucket" "bucket_with_encryption" {
 }
 
 resource "aws_s3_bucket" "bucket_without_encryption" {
-  count = var.enabled && !var.enable_sse ? 1 : 0
+  count = var.enabled && ! var.enable_sse ? 1 : 0
 
   bucket = var.name
 
@@ -82,7 +82,7 @@ resource "aws_s3_bucket" "bucket_without_encryption" {
   })
 
   dynamic "logging" {
-    for_each = [for l in var.logging: {
+    for_each = [for l in var.logging : {
       target_bucket = l.target_bucket
       target_prefix = l.target_prefix
     }]
@@ -100,7 +100,7 @@ resource "aws_s3_bucket" "bucket_without_encryption" {
 
     transition {
       days          = var.standard_transition_days
-      storage_class = "STANDARD_IA"                     # or "ONEZONE_IA"
+      storage_class = "STANDARD_IA" # or "ONEZONE_IA"
     }
 
     transition {
