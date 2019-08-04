@@ -1,0 +1,21 @@
+---
+driver:
+  name: "terraform"
+
+provisioner:
+  name: "terraform"
+
+platforms:
+  - name: "aws"
+
+verifier:
+  name: "awspec"
+
+suites:
+  - name: "terraform"
+    driver:
+      root_module_directory: "examples"
+    verifier:
+      name: "awspec"
+      patterns:
+      - "test/integration/test_s3.rb"
